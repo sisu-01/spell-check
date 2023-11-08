@@ -1,0 +1,14 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+{% block meta %}
+<script src="{% static 'js/spell_404.js' %}"></script>
+{% endblock %}
+
+{% block title %}
+404
+{% endblock %}
+
+{% block content %}
+{{mess}}
+{% endblock %}

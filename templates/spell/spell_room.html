@@ -1,0 +1,22 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+{% block meta %}
+<link rel="stylesheet" href="{% static 'css/spell.css' %}">
+{{ room_id|json_script:"id" }}
+<script>
+    const room_id = JSON.parse(document.getElementById('id').textContent);
+    const url = "{% if request.is_secure %}https{% else %}http{% endif %}://{{ request.get_host }}{% url 'spell:loby' %}?c="+room_id;
+</script>
+<script type="text/babel" src="{% static 'js/spell_room.js' %}?{% now 'U' %}"></script>
+{% endblock %}
+
+{% block title %}
+spell_room
+{% endblock %}
+
+{% block content %}
+{{room_id}}
+<main id="root">
+</main>
+{% endblock %}

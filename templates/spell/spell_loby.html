@@ -1,0 +1,18 @@
+{% extends 'layout/base.html' %}
+{% load static %}
+
+{% block meta %}
+<script src="{% static 'js/spell_loby.js' %}?{% now 'U' %}"></script>
+{% endblock %}
+
+{% block title %}
+spell_loby
+{% endblock %}
+
+{% block content %}
+<form id="loby_form" class="input-group mt-3" method="post" action="{% url 'spell:room' %}">
+    {% csrf_token %}
+    <input type="hidden" id="room_id" name="room_id" value="{{room_id}}">
+</form>
+<button onClick="submit();">create</button>
+{% endblock %}

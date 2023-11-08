@@ -1,0 +1,179 @@
+:root {
+    --image-url: url('/static/images/spells.png');
+    --image-cnt: 10;
+
+    --ln-wd: 25px;
+    --ln-wd-a: calc( var(--ln-wd) * var(--image-cnt) );
+
+    --ht-wd: 25px;
+    --ht-wd-a: calc( var(--ht-wd) * var(--image-cnt) );
+
+    --sp-wd-a: 450px;
+    --sp-wd: calc( var(--sp-wd-a) / var(--image-cnt) );
+
+}
+.ln-탑 {
+    background-position: calc( var(--ln-wd) * 2 * -1 ) calc( var(--ln-wd) * -1 );
+}
+.ln-정글 {
+    background-position: calc( var(--ln-wd) * 3 * -1 ) calc( var(--ln-wd) * -1 );
+}
+.ln-미드 {
+    background-position: calc( var(--ln-wd) * 4 * -1 ) calc( var(--ln-wd) * -1 );
+}
+.ln-원딜 {
+    background-position: calc( var(--ln-wd) * 5 * -1 ) calc( var(--ln-wd) * -1 );
+}
+.ln-서폿 {
+    background-position: calc( var(--ln-wd) * 6 * -1 ) calc( var(--ln-wd) * -1 );
+}
+.ht-우주{
+    background-position: calc( var(--ht-wd) * 0 * -1 ) calc( var(--ht-wd) * -1 );
+}
+.ht-장화{
+    background-position: calc( var(--ht-wd) * 1 * -1 ) calc( var(--ht-wd) * -1 );
+}
+.sp-null{
+    background-position: calc( var(--sp-wd) * 0 * -1 ) 0px;
+}
+.sp-정화{
+    background-position: calc( var(--sp-wd) * 1 * -1 ) 0px;
+}
+.sp-탈진{
+    background-position: calc( var(--sp-wd) * 2 * -1 ) 0px;
+}
+.sp-점멸{
+    background-position: calc( var(--sp-wd) * 3 * -1 ) 0px;
+}
+.sp-유체화{
+    background-position: calc( var(--sp-wd) * 4 * -1 ) 0px;
+}
+.sp-회복{
+    background-position: calc( var(--sp-wd) * 5 * -1 ) 0px;
+}
+.sp-강타{
+    background-position: calc( var(--sp-wd) * 6 * -1 ) 0px;
+}
+.sp-순간이동{
+    background-position: calc( var(--sp-wd) * 7 * -1 ) 0px;
+}
+.sp-점화{
+    background-position: calc( var(--sp-wd) * 8 * -1 ) 0px;
+}
+.sp-방어막{
+    background-position: calc( var(--sp-wd) * 9 * -1 ) 0px;
+}
+.float-right {
+    float: right;
+}
+.d-none {
+    display: none !important;
+}
+#root {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    max-width: 550px;
+    width: 100%;
+    height:95vh;
+}
+.header {
+    font-weight: 900;
+    font-size: 20px;
+}
+.champion_list {
+    display: flex;
+    gap: 10px;
+    margin: auto;
+    padding-bottom: 10px;
+    width: 100%;
+}
+.Champion {
+    width: 100%;
+    background-color: #1f2331;
+    text-align: center;
+    font-weight: 900;
+}
+.lane_name {
+    width: var(--ln-wd);
+    height: var(--ln-wd);
+    background-repeat: no-repeat;
+    background-image: var(--image-url);
+    background-size: var(--ln-wd-a);
+    padding: 3px 0px;
+}
+.haste_container {
+    display: flex;
+}
+.haste_container > div {
+    display: flex;
+    padding: 5px 0px;
+}
+.haste-label {
+    width: var(--ht-wd);
+    height: var(--ht-wd);
+    background-repeat: no-repeat;
+    background-image: var(--image-url);
+    background-size: var(--ht-wd-a);
+    cursor: pointer;
+}
+.spell_container {
+    display: flex;
+    justify-content: center;
+}
+.normal {
+    margin: 2px;
+}
+.focus {
+    border: 2px solid rgb(255, 255, 255, 0.7);
+}
+.spell {
+    width: var(--sp-wd);
+    height: var(--sp-wd);
+    background-repeat: no-repeat;
+    background-image: var(--image-url);
+    background-size: var(--sp-wd-a);
+    cursor: pointer;
+}
+.black {
+    position: absolute;
+    width: var(--sp-wd);
+    height: var(--sp-wd);
+    background-color: rgb(0,0,0,0.3);
+    transform: translate(0%, -100%);
+}
+.spell-count {
+    position: absolute;
+    width: var(--sp-wd);
+    height: var(--sp-wd);
+    transform: translate(0%, -100%);
+    color: white;
+}
+.TimeSelector {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--sp-wd);
+    width: calc( var(--sp-wd) * 1.5 );
+    height: auto;
+}
+.TimeSelector > button {
+    padding: 10px 0px;
+}
+.spell_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: calc( var(--sp-wd) * 0.30 );
+    padding: calc( var(--sp-wd) * 0.45 );
+    width: calc( var(--sp-wd-a) / 2 + var(--sp-wd) * 0.1 );
+    height:auto;
+    background-color: #1f2331;
+}
+.spell_list .spell {
+    width: var(--sp-wd);
+    height: var(--sp-wd);
+    background-repeat: no-repeat;
+    background-image: var(--image-url);
+    background-size: var(--sp-wd-a);
+}
