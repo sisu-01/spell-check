@@ -3,3 +3,4 @@ mysqlclient
 django-environ
 daphne
 channels
+channels_redis
